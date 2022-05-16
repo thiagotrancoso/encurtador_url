@@ -15,6 +15,8 @@ class ShortenedUrlService
     public function store(array $inputs)
     {
         try {
+            self::removeExpiredUrls();
+
             $inputs['code_url'] = $inputs['code_url'] ?? $this->getCodeUrl();
             $inputs['expiration'] = $inputs['expiration'] ?? $this->getExpirationDate();
 
@@ -49,5 +51,10 @@ class ShortenedUrlService
     private function getExpirationDate(int $days = 7): string
     {
         return Carbon::now()->addDays($days)->format('Y-m-d');
+    }
+
+    public static function removeExpiredUrls(): void
+    {
+        ShortenedUrl::where('expiration', '<', Carbon::now()->format('Y-m-d'))->delete();
     }
 }
