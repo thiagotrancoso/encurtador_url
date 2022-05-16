@@ -1,8 +1,4 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
+# Project files
 .env
 .env.backup
 .phpunit.result.cache
@@ -10,5 +6,23 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+docker-compose.override.yml
+
+# Project folders
 /.idea
 /.vscode
+/.vs
+/storage/*.key
+
+# Node / Vendor
+/node_modules
+/vendor
+
+# Public
+/public/hot
+/public/storage
+/public/dist
+/public/mix-manifest.json
+
+# Docker
+/docker/logs
