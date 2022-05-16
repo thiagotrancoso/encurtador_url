@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ShortenedUrl;
 use Carbon\Carbon;
 
-class ShortenedController extends Controller
+class RedirectController extends Controller
 {
     public function redirect($codeUrl)
     {

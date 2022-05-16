@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ShortenedController;
+use App\Http\Controllers\RedirectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +26,4 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'allLinks'])->name('admin.all-links');
 });
 
-Route::get('/{codeUrl}', [ShortenedController::class, 'redirect']);
+Route::get('/{codeUrl}', [RedirectController::class, 'redirect']);
