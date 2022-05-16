@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ShortenedController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', '/admin', 301);
+
+Route::get('login', [LoginController::class, 'form'])->middleware('guest')->name('login');
+Route::post('login', [LoginController::class, 'login'])->middleware('guest');
+Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');
+
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'allLinks'])->name('admin.all-links');
 });
 
 Route::get('/{codeUrl}', [ShortenedController::class, 'redirect']);
