@@ -33,18 +33,6 @@ services:
     networks:
       - encurtador_url
 
-  # mongodb:
-  #   image: mongo:5.0
-  #   container_name: mongodb
-  #   # restart: always
-  #   hostname: mongodb
-  #   volumes:
-  #     - mongo:/data
-  #   ports:
-  #     - "27017:27017"
-  #   networks:
-  #     - encurtador_url
-
   php:
     image: thiagotrancoso/php8.1-fpm:v1
     container_name: "php"
@@ -77,22 +65,9 @@ services:
     networks:
       - encurtador_url
 
-  # redis:
-  #   image: redis:latest
-  #   container_name: redis
-  #   # restart: unless-stopped
-  #   ports:
-  #     - "6379:6379"
-  #   volumes:
-  #     - redis:/data
-  #   networks:
-  #     - encurtador_url
-
 volumes:
   mysql:
-  # mongo:
   phpmyadmin:
-  # redis:
 
 networks:
   encurtador_url:
