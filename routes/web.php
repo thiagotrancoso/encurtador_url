@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RedirectController;
+use App\Http\Controllers\ShortenedUrlController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->n
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'allLinks'])->name('admin.all-links');
+    Route::get('/encurtar-url', [ShortenedUrlController::class, 'create'])->name('admin.shortened-url.create');
 });
 
 Route::get('/{codeUrl}', [RedirectController::class, 'redirect']);

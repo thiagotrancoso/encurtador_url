@@ -14,5 +14,9 @@ const mix = require('laravel-mix');
 mix
   .copy('./resources/assets/css/styles.css', './public/assets/css/styles.css')
   .copy('./resources/assets/js/scripts.js', './public/assets/js/scripts.js')
+  .copy('./resources/assets/js/jquery.js', './public/assets/js/jquery.js')
+  .copy('./resources/assets/js/jquery.inputmask.min.js', './public/assets/js/jquery.inputmask.min.js')
+  .copy('./resources/assets/js/shortener.js', './public/assets/js/shortener.js')
+  .copy('./resources/assets/plugins/toastr', './public/assets/plugins/toastr')
 
   .version();

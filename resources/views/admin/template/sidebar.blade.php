@@ -6,6 +6,11 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-circle"></i></div>
                     Todos os links
                 </a>
+
+                <a href="{{ route('admin.shortened-url.create') }}" class="nav-link {{ menu_active('admin.shortened-url.create') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-circle"></i></div>
+                    Encurtar URL
+                </a>
             </div>
         </div>
     </nav>
