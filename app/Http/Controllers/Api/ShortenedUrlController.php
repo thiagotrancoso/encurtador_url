@@ -7,7 +7,7 @@ use App\Service\ShortenedUrlService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ShortenedUrlsController extends Controller
+class ShortenedUrlController extends Controller
 {
     private ShortenedUrlService $shortenedUrlService;
 
@@ -30,7 +30,7 @@ class ShortenedUrlsController extends Controller
             [
                 'original_url' => 'required|url',
                 'code_url'     => 'nullable|unique:shortened_urls,code_url',
-                'expiration'   => 'nullable|date_format:Y-m-d'
+                'expiration'   => 'nullable|date_format:d/m/Y'
             ]
         );
 

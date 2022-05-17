@@ -18,7 +18,7 @@ class ShortenedUrlService
             self::removeExpiredUrls();
 
             $inputs['code_url'] = $inputs['code_url'] ?? $this->getCodeUrl();
-            $inputs['expiration'] = $inputs['expiration'] ?? $this->getExpirationDate();
+            $inputs['expiration'] = !empty($inputs['expiration']) ? convert_date_br_to_db($inputs['expiration']) : $this->getExpirationDate();
 
             ShortenedUrl::create($inputs);
 
