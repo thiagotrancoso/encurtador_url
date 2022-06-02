@@ -15,6 +15,13 @@ docker-compose up -d --build
 
 ## Requisitos
 
+> O arquivo `.env.example` está configurado com as informações necessárias.
+
+**Criar um banco de dados com o nome abaixo**
+```
+shortener
+```
+
 **Executar um dos comandos abaixo para garantir que os assets CSS e JS sejam gerados corretamente.**
 ```
 npm run dev
@@ -37,6 +44,7 @@ Login: admin@admin.com
 Senha: 12345678
 ```
 
+# API
 ## Rota para encurtar URL
 
 POST - http://localhost/api/shorten
