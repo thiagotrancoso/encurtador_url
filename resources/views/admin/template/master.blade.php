@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }}">
 
         <!-- Custom style -->
-        {{-- <link rel="stylesheet" href="{{ asset('assets/admin/css/custom.min.css') }}"> --}}
+        <link rel="stylesheet" href="{{ asset('assets/admin/css/custom.min.css') }}">
 
         <!-- Custom CSS code per page -->
         @stack('style-code')
