@@ -21,18 +21,15 @@
 @section('content-main')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Title</h3>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ $data['quantUrlShortened'] }}</h3>
+                        <p>Url's encurtadas</p>
                     </div>
 
-                    <div class="card-body">
-                        Content
-                    </div>
-
-                    <div class="card-footer">
-                        Footer
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,11 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $data['quantUrlShortened'] = ShortenedUrl::where('expiration', '>', Carbon::now()->format('Y-m-d'))->count();
+
+        return view('admin.dashboard', [
+            'data' => $data
+        ]);
     }
 
     public function allLinks()
