@@ -15,7 +15,7 @@ if (!function_exists('menu_active')) {
         $return = '';
 
         if (Route::is($routeName)) {
-            $return = 'text-white';
+            $return = 'active';
         }
 
         return $return;
