@@ -1,21 +1,3 @@
-toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": true,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-}
-
 $(function () {
     $('#expiration').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
 
@@ -41,7 +23,10 @@ $(function () {
             $('#original_url').removeClass('is-invalid')
             $('#form-group-original_url label').css('color', '')
 
-            toastr["success"]("Url encurtada com sucesso")
+            Toast.fire({
+                icon: "success",
+                title: "Url encurtada com sucesso"
+            })
 
             $('#shortened_url').text(response.shortened_url)
             $('#result').css('display', 'block')

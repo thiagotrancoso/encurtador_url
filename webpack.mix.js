@@ -49,8 +49,14 @@ mix
     // AdminLte - Plugin: bootstrap-switch
     .copyDirectory('./node_modules/admin-lte/plugins/bootstrap-switch', './public/assets/admin/plugins/bootstrap-switch')
 
+    // AdminLte - Plugin: inputmask
+    .copyDirectory('./node_modules/admin-lte/plugins/inputmask', './public/assets/admin/plugins/inputmask')
+
     // Custom CSS
     .sass('./resources/assets/admin/scss/custom.scss', './public/assets/admin/css/custom.min.css')
+
+    // Custom JS - Page shortener-url
+    .js('./resources/assets/js/shortener.js', './public/assets/admin/js/shortener.min.js')
 
     //----------------------------------------------------------------------
     // Other settings

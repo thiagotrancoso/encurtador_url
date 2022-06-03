@@ -1,19 +1,34 @@
 @extends('admin.template.master')
 
-@section('Admin | Encurtar URL')
+@section('title', 'Encurtador de URL | Encurtar URL')
 
-@section('content')
-    <div class="container-fluid px-4">
-        <h1 class="my-4">Encurtar URL</h1>
+@section('content-header')
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Encurtar URL</h1>
+            </div>
 
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Encurtar URL</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('content-main')
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card mb-4">
+            <div class="col-12">
+                <div class="card">
                     <form method="post" name="create">
                         @csrf
 
                         <div class="card-body">
-                            <div class="form-group mb-3" id="form-group-original_url">
+                            <div class="form-group" id="form-group-original_url">
                                 <label for="original_url">URL original: <small>(Obrigatório)</small></label>
                                 <div class="input-group">
                                     <input type="text" id="original_url" name="original_url" class="form-control">
@@ -21,7 +36,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mb-3">
+                            <div class="form-group">
                                 <label for="code_url">Nome personalizado: <small>(Opcional)</small></label>
                                 <div class="input-group">
                                     <input type="text" id="code_url" name="code_url" class="form-control">
@@ -29,7 +44,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group mb-0">
                                 <label for="expiration">Data de expiração: <small>(Opcional)</small></label>
                                 <div class="input-group">
                                     <input type="text" name="expiration" id="expiration" class="form-control"
@@ -72,3 +87,11 @@
         }
     </style>
 @endsection
+
+@push('script-link')
+    <!-- InputMask -->
+    <script src="{{ asset('assets/admin/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+
+    <!-- Shortener url -->
+    <script src="{{ asset('assets/admin/js/shortener.min.js') }}"></script>
+@endpush
