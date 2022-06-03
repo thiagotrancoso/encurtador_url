@@ -21,9 +21,10 @@ Route::redirect('/', '/admin', 301);
 
 Route::get('login', [LoginController::class, 'form'])->middleware('guest')->name('login');
 Route::post('login', [LoginController::class, 'login'])->middleware('guest');
-Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->name('auth.logout.action');
 
 Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/', [AdminController::class, 'allLinks'])->name('admin.all-links');
     Route::get('/encurtar-url', [ShortenedUrlController::class, 'create'])->name('admin.shortened-url.create');
 });

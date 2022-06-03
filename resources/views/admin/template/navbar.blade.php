@@ -1,34 +1,34 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand ps-3" href="{{ route('admin.all-links') }}">Encurtador URL</a>
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+    </ul>
 
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
-        <i class="fas fa-bars"></i>
-    </button>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-toggle="dropdown">
+                <i class="fas fa-user"></i>
+            </a>
 
-    <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ Auth::user()->name }}
-                </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <div class="p-3">
+                    {{ auth()->user()->name }}
+                </div>
 
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    {{-- <li><a class="dropdown-item" href="">Logout</a></li> --}}
+                <div class="dropdown-divider"></div>
 
-                    <li>
-                        <form method="post" action="{{ route('logout') }}">
-                            @csrf
+                <button href="#" class="dropdown-item"
+                    onclick="event.preventDefault(); document.querySelector('#logout-form').submit();">
+                    <i class="fas fa-sign-out-alt mr-2 text-muted"></i> Sair
+                </button>
+            </div>
+        </li>
 
-                            <a href="{{ route('logout') }}"
-                                class="dropdown-item"
-                                onclick="event.preventDefault(); this.closest('form').submit();"
-                            >
-                                Sair
-                            </a>
-                        </form>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+        <form method="post" id="logout-form" action="{{ route('auth.logout.action') }}">
+            @csrf
+        </form>
+    </ul>
 </nav>

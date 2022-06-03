@@ -1,17 +1,41 @@
-<div id="layoutSidenav_nav">
-    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-        <div class="sb-sidenav-menu">
-            <div class="nav">
-                <a href="{{ route('admin.all-links') }}" class="nav-link {{ menu_active('admin.all-links') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-circle"></i></div>
-                    Todos os links
-                </a>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{{ route('admin.dashboard') }}" class="brand-link">
+        <img src="https://via.placeholder.com/100x100" alt="Encurtador" class="brand-image img-circle elevation-3">
+        <span class="brand-text font-weight-light">Encurtador</span>
+    </a>
 
-                <a href="{{ route('admin.shortened-url.create') }}" class="nav-link {{ menu_active('admin.shortened-url.create') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-circle"></i></div>
-                    Encurtar URL
-                </a>
-            </div>
-        </div>
-    </nav>
-</div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="true">
+                <li class="nav-item">
+                    <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.all-links') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Todos os links
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.shortened-url.create') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Encurtar URL
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

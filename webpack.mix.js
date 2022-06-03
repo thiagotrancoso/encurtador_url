@@ -12,11 +12,53 @@ const mix = require('laravel-mix');
  */
 
 mix
-  .copy('./resources/assets/css/styles.css', './public/assets/css/styles.css')
-  .copy('./resources/assets/js/scripts.js', './public/assets/js/scripts.js')
-  .copy('./resources/assets/js/jquery.js', './public/assets/js/jquery.js')
-  .copy('./resources/assets/js/jquery.inputmask.min.js', './public/assets/js/jquery.inputmask.min.js')
-  .copy('./resources/assets/js/shortener.js', './public/assets/js/shortener.js')
-  .copy('./resources/assets/plugins/toastr', './public/assets/plugins/toastr')
+    //----------------------------------------------------------------------
+    // Admin
+    //----------------------------------------------------------------------
+    // AdminLte - CSS
+    .copy('./node_modules/admin-lte/dist/css/adminlte.min.css', './public/assets/admin/css/adminlte.min.css')
+    .copy('./node_modules/admin-lte/dist/css/adminlte.min.css.map', './public/assets/admin/css/adminlte.min.css.map')
 
-  .version();
+    // AdminLte - JS
+    .copy('./node_modules/admin-lte/dist/js/adminlte.min.js', './public/assets/admin/js/adminlte.min.js')
+    .copy('./node_modules/admin-lte/dist/js/adminlte.min.js.map', './public/assets/admin/js/adminlte.min.js.map')
+
+    // AdminLte - Plugin: jquery
+    .copy('./node_modules/admin-lte/plugins/jquery/jquery.min.js', './public/assets/admin/plugins/jquery/jquery.min.js')
+    .copy('./node_modules/admin-lte/plugins/jquery/jquery.min.map', './public/assets/admin/plugins/jquery/jquery.min.map')
+
+    // AdminLte - Plugin: bootstrap
+    .copy('./node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js', './public/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js')
+    .copy('./node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js.map', './public/assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js.map')
+
+    // AdminLte - Plugin: icheck-bootstrap
+    .copy('./node_modules/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css', './public/assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')
+
+    // AdminLte - Plugin: Fontawesome
+    .copyDirectory('./node_modules/admin-lte/plugins/fontawesome-free', './public/assets/admin/plugins/fontawesome-free')
+
+    // AdminLte - Plugin: overlayScrollbars
+    .copyDirectory('./node_modules/admin-lte/plugins/overlayScrollbars', './public/assets/admin/plugins/overlayScrollbars')
+
+    // AdminLte - Plugin: SweetAlert2
+    .copyDirectory('./node_modules/admin-lte/plugins/sweetalert2', './public/assets/admin/plugins/sweetalert2')
+
+    // AdminLte - Plugin: bs-custom-file-input
+    .copyDirectory('./node_modules/admin-lte/plugins/bs-custom-file-input', './public/assets/admin/plugins/bs-custom-file-input')
+
+    // AdminLte - Plugin: bootstrap-switch
+    .copyDirectory('./node_modules/admin-lte/plugins/bootstrap-switch', './public/assets/admin/plugins/bootstrap-switch')
+
+    // Custom CSS
+    // .sass('./resources/assets/admin/scss/custom.scss', './public/assets/admin/css/custom.min.css')
+
+    //----------------------------------------------------------------------
+    // Other settings
+    //----------------------------------------------------------------------
+    .options({
+        // Makes laravel-mix not process urls that are inside CSS files
+        processCssUrls: false
+    })
+
+    // Enable versioning of minified files
+    .version();

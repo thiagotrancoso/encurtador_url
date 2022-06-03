@@ -7,6 +7,11 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
+    public function dashboard()
+    {
+        return 'Dashboard';
+    }
+
     public function allLinks()
     {
         $links = ShortenedUrl::where('expiration', '>', Carbon::now()->format('Y-m-d'))->paginate(10);

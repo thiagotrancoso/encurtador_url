@@ -1,13 +1,9 @@
-<footer class="py-4 bg-light mt-auto">
-    <div class="container-fluid px-4">
-        <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">
-                Copyright &copy; 2022
-            </div>
-
-            <div class="text-muted">
-                Desenvolvido por Thiago Trancoso
-            </div>
-        </div>
+<footer class="main-footer">
+    <!-- Right content -->
+    <div class="float-right d-none d-sm-block">
+        Desenvolvido por Thiago Trancoso
     </div>
+
+    <!-- Left content -->
+    Encurtador de URL
 </footer>
