@@ -10,7 +10,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="true">
                 <li class="nav-item">
-                    <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                    <a href="{{ route('admin.dashboard') }}" class="nav-link {{ menu_active('admin.dashboard') }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Dashboard
@@ -19,7 +19,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.all-links') }}" class="nav-link">
+                    <a href="{{ route('admin.all-links') }}" class="nav-link {{ menu_active('admin.all-links') }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Todos os links
@@ -28,7 +28,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.shortened-url.create') }}" class="nav-link">
+                    <a href="{{ route('admin.shortened-url.create') }}" class="nav-link {{ menu_active('admin.shortened-url.create') }}">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Encurtar URL
