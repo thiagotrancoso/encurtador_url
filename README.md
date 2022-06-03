@@ -8,21 +8,33 @@ Na raiz do projeto tem o arquivo `docker-compose.yml` com tudo que é necessári
 * Laravel 9
 * MySQL 8.0
 
+## Instruções
+
+**Clonar o projeto**
+
+> O arquivo `.env.example` está configurado com as informações necessárias.
+
 **Executar o comando abaixo para subir todos os serviços.**
 ```
 docker-compose up -d --build
 ```
-
-## Requisitos
-
-> O arquivo `.env.example` está configurado com as informações necessárias.
 
 **Criar um banco de dados com o nome abaixo**
 ```
 shortener
 ```
 
-**Executar um dos comandos abaixo para garantir que os assets CSS e JS sejam gerados corretamente.**
+**Instalar dependências do composer**
+```
+composer install
+```
+
+**Instalar dependências do npm**
+```
+npm install
+```
+
+**Executar um dos comandos abaixo para carregar os assets CSS e JS e plugins**
 ```
 npm run dev
 ```
