@@ -24,8 +24,8 @@ Route::post('login', [LoginController::class, 'login'])->middleware('guest')->na
 Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->name('auth.logout.action');
 
 Route::middleware('auth')->prefix('admin')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/', [AdminController::class, 'allLinks'])->name('admin.all-links');
+    Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/all-links', [AdminController::class, 'allLinks'])->name('admin.all-links');
     Route::get('/encurtar-url', [ShortenedUrlController::class, 'create'])->name('admin.shortened-url.create');
 });
 

@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return 'Dashboard';
+        return view('admin.dashboard');
     }
 
     public function allLinks()
