@@ -1,11 +1,26 @@
 @extends('admin.template.master')
 
-@section('Admin | Todos os links')
+@section('title', 'Encurtador de URL | Todos os links')
 
-@section('content')
-    <div class="container-fluid px-4">
-        <h1 class="my-4">Todos os links</h1>
+@section('content-header')
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Todos os links</h1>
+            </div>
 
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Todos os links</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('content-main')
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
@@ -33,3 +48,11 @@
         </div>
     </div>
 @endsection
+
+@push('style-code')
+    <style>
+        .pagination {
+            margin-bottom: 0;
+        }
+    </style>
+@endpush
