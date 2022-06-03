@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/admin', 301);
 
 Route::get('login', [LoginController::class, 'form'])->middleware('guest')->name('login');
-Route::post('login', [LoginController::class, 'login'])->middleware('guest');
+Route::post('login', [LoginController::class, 'login'])->middleware('guest')->name('auth.login.action');
 Route::post('logout', [LoginController::class, 'logout'])->middleware('auth')->name('auth.logout.action');
 
 Route::middleware('auth')->prefix('admin')->group(function () {

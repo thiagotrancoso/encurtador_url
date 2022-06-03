@@ -50,7 +50,7 @@ mix
     .copyDirectory('./node_modules/admin-lte/plugins/bootstrap-switch', './public/assets/admin/plugins/bootstrap-switch')
 
     // Custom CSS
-    // .sass('./resources/assets/admin/scss/custom.scss', './public/assets/admin/css/custom.min.css')
+    .sass('./resources/assets/admin/scss/custom.scss', './public/assets/admin/css/custom.min.css')
 
     //----------------------------------------------------------------------
     // Other settings

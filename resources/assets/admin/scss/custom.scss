@@ -1,0 +1,23 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/**
+ * Changes to the AdminLte template
+ */
+.layout-fixed .main-sidebar {
+    overflow: hidden;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 400;
+}
+
+.swal2-container.swal2-center > .swal2-popup {
+    align-self: start;
+}
+
+.input-group:not(.has-validation) > .form-control:not(:last-child) {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}

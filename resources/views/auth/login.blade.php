@@ -1,71 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Admin | Login</title>
+        <title>Encurtador de URL | Login</title>
 
-        <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+
+        <!-- icheck bootstrap -->
+        <link rel="stylesheet" href="{{ asset('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }}">
+
+        <!-- Custom style -->
+        <link rel="stylesheet" href="{{ asset('assets/admin/css/custom.min.css') }}">
     </head>
 
-    <body>
-        <div class="container-fluid ps-md-0">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
-                    <div class="login d-flex align-items-center py-5">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-9 col-lg-8 mx-auto">
-                                    <h3 class="login-heading mb-4 text-center">Encurtador de URL</h3>
+    <body class="hold-transition login-page">
+        <div class="login-box">
+            <div class="card card-outline card-primary">
+                <div class="card-header text-center">
+                    <img src="https://via.placeholder.com/200x80" alt="Encurtador de URL">
+                </div>
 
-                                    <form method="post" action="{{ route('login') }}">
-                                        @csrf
+                <div class="card-body">
+                    <form method="post" action="{{ route('auth.login.action') }}">
+                        @csrf
 
-                                        @if ($errors->any())
-                                            <div class="font-medium text-red-600">
-                                                Ops! Algo deu errado.
-                                            </div>
+                        <label for="email">E-mail:</label>
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" id="email" value="{{ old('email') }}"
+                                class="form-control @error('email') is-invalid @enderror"
+                                aria-describedby="email-validation-feedback">
 
-                                            <ul class="mt-3 list-disc list-inside text-sm text-red-600">
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        @endif
-
-                                        <div class="form-floating mb-3">
-                                            <input type="email" id="email" name="email"
-                                            class="form-control"
-                                            placeholder="name@example.com"
-                                            value="{{ old('email') }}"
-                                            required autofocus
-                                        >
-                                            <label for="email">E-mail</label>
-                                        </div>
-
-                                        <div class="form-floating mb-3">
-                                            <input type="password" id="password" name="password"
-                                                class="form-control"
-                                                placeholder="Password"
-                                                required
-                                            >
-                                            <label for="password">Senha</label>
-                                        </div>
-
-                                        <div class="d-grid">
-                                            <button type="submit" class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2">
-                                                Login
-                                            </button>
-                                        </div>
-                                    </form>
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
                                 </div>
                             </div>
+
+                            @error('email')
+                                <div id="email-validation-feedback" class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                    </div>
+
+                        <label for="password">Senha:</label>
+                        <div class="input-group mb-3">
+                            <input type="password" name="password" id="password"
+                                class="form-control @error('password') is-invalid @enderror"
+                                aria-describedby="password-validation-feedback">
+
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+
+                            @error('password')
+                                <div id="password-validation-feedback" class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="icheck-primary">
+                                    <input type="checkbox" name="remember" id="remember">
+                                    <label for="remember">
+                                        Lembrar-me
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+
+        <!-- jQuery -->
+        <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
+
+        <!-- Bootstrap 4 -->
+        <script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+        <!-- AdminLTE App -->
+        <script src="{{ asset('assets/admin/js/adminlte.min.js') }}"></script>
     </body>
 </html>
